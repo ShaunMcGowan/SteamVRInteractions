@@ -43,6 +43,14 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_default_RightTrigger;
         
+        private static SteamVR_Action_Vector2 p_default_Locomotion;
+        
+        private static SteamVR_Action_Boolean p_default_JumpAction;
+        
+        private static SteamVR_Action_Boolean p_default_GrabGrip;
+        
+        private static SteamVR_Action_Boolean p_default_GrabPinch;
+        
         private static SteamVR_Action_Vibration p_default_Haptic;
         
         private static SteamVR_Action_Vector2 p_platformer_Move;
@@ -163,6 +171,38 @@ namespace Valve.VR
             }
         }
         
+        public static SteamVR_Action_Vector2 default_Locomotion
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_Locomotion.GetCopy<SteamVR_Action_Vector2>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean default_JumpAction
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_JumpAction.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean default_GrabGrip
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_GrabGrip.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean default_GrabPinch
+        {
+            get
+            {
+                return SteamVR_Actions.p_default_GrabPinch.GetCopy<SteamVR_Action_Boolean>();
+            }
+        }
+        
         public static SteamVR_Action_Vibration default_Haptic
         {
             get
@@ -243,6 +283,10 @@ namespace Valve.VR
                     SteamVR_Actions.default_GripRight,
                     SteamVR_Actions.default_LeftTrigger,
                     SteamVR_Actions.default_RightTrigger,
+                    SteamVR_Actions.default_Locomotion,
+                    SteamVR_Actions.default_JumpAction,
+                    SteamVR_Actions.default_GrabGrip,
+                    SteamVR_Actions.default_GrabPinch,
                     SteamVR_Actions.default_Haptic,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
@@ -265,6 +309,10 @@ namespace Valve.VR
                     SteamVR_Actions.default_GripRight,
                     SteamVR_Actions.default_LeftTrigger,
                     SteamVR_Actions.default_RightTrigger,
+                    SteamVR_Actions.default_Locomotion,
+                    SteamVR_Actions.default_JumpAction,
+                    SteamVR_Actions.default_GrabGrip,
+                    SteamVR_Actions.default_GrabPinch,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Steering,
@@ -289,6 +337,9 @@ namespace Valve.VR
                     SteamVR_Actions.default_GripRight,
                     SteamVR_Actions.default_LeftTrigger,
                     SteamVR_Actions.default_RightTrigger,
+                    SteamVR_Actions.default_JumpAction,
+                    SteamVR_Actions.default_GrabGrip,
+                    SteamVR_Actions.default_GrabPinch,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset};
@@ -296,6 +347,7 @@ namespace Valve.VR
                     SteamVR_Actions.default_Squeeze,
                     SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
+                    SteamVR_Actions.default_Locomotion,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.buggy_Steering};
             Valve.VR.SteamVR_Input.actionsVector3 = new Valve.VR.SteamVR_Action_Vector3[0];
@@ -313,6 +365,10 @@ namespace Valve.VR
                     SteamVR_Actions.default_GripRight,
                     SteamVR_Actions.default_LeftTrigger,
                     SteamVR_Actions.default_RightTrigger,
+                    SteamVR_Actions.default_Locomotion,
+                    SteamVR_Actions.default_JumpAction,
+                    SteamVR_Actions.default_GrabGrip,
+                    SteamVR_Actions.default_GrabPinch,
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Steering,
@@ -336,6 +392,10 @@ namespace Valve.VR
             SteamVR_Actions.p_default_GripRight = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/GripRight")));
             SteamVR_Actions.p_default_LeftTrigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/LeftTrigger")));
             SteamVR_Actions.p_default_RightTrigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/RightTrigger")));
+            SteamVR_Actions.p_default_Locomotion = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/default/in/Locomotion")));
+            SteamVR_Actions.p_default_JumpAction = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/JumpAction")));
+            SteamVR_Actions.p_default_GrabGrip = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/GrabGrip")));
+            SteamVR_Actions.p_default_GrabPinch = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/default/in/GrabPinch")));
             SteamVR_Actions.p_default_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/default/out/Haptic")));
             SteamVR_Actions.p_platformer_Move = ((SteamVR_Action_Vector2)(SteamVR_Action.Create<SteamVR_Action_Vector2>("/actions/platformer/in/Move")));
             SteamVR_Actions.p_platformer_Jump = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/platformer/in/Jump")));

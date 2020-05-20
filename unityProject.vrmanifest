@@ -2,13 +2,13 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.sepsistest.exe",
+      "app_key": "application.generated.unity.steamvrgit.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "F:\\UnityProjects\\Grabbing\\SteamVR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "C:\\Users\\frede\\Developer\\SteamVRInteractions\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
-          "name": "SepsisTest [Testing]"
+          "name": "SteamVRGit [Testing]"
         }
       }
     }
