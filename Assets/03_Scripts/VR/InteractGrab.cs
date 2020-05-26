@@ -94,7 +94,9 @@ public class InteractGrab : MonoBehaviour
             GrabableObject grabScript = GrabbedObject.GetComponent<GrabableObject>();
 
             grabbedRB.isKinematic = oldRigidBodyIsKinematic;
+           
             grabbedRB.AddForce(averageVeloctiy * 5, ForceMode.VelocityChange);
+           
             GrabbedObject.transform.parent = oldParent;
 
             // Once reparent we snap back 
