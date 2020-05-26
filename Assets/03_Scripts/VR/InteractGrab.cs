@@ -9,17 +9,25 @@ public enum ControllerHand
 }
 public class InteractGrab : MonoBehaviour
 {
+    // Public vars
     public bool IsGrabbing = false;
     public ControllerHand Hand = ControllerHand.Left;
-    private GameObject GrabbedObject;
+    public float ThrowMulitplier = 1; // How much extra speed you will throw an object with (Also may have spelled mulitplier wrong)
 
+
+    // private vars
+    private GameObject GrabbedObject;
     private Transform oldParent; // The parent of the object grabbed before it was grabbed
     private bool oldRigidBodyIsKinematic = false;
     private Rigidbody grabbedRB;
 
     // Used to calculate the average vel
     private Vector3 averageVeloctiy = Vector3.zero;
-    private Vector3 lastFrameVelocity = Vector3.zero;
+    private Vector3 lastFrameVelocity = Vector3.zero;  
+    
+    // Used to calculate the average torque
+    private Vector3 averageTorque = Vector3.zero;
+    private Vector3 lastFrameTorque = Vector3.zero;
 
 
 
@@ -30,6 +38,7 @@ public class InteractGrab : MonoBehaviour
             CalculateVelocity();
         }
         CheckIfReleasing();
+        HandleGrab(transform);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -95,7 +104,8 @@ public class InteractGrab : MonoBehaviour
 
             grabbedRB.isKinematic = oldRigidBodyIsKinematic;
            
-            grabbedRB.AddForce(averageVeloctiy * 5, ForceMode.VelocityChange);
+            grabbedRB.AddForce(averageVeloctiy * ThrowMulitplier, ForceMode.VelocityChange);
+            grabbedRB.AddTorque(lastFrameTorque, ForceMode.VelocityChange);
            
             GrabbedObject.transform.parent = oldParent;
 
@@ -118,8 +128,12 @@ public class InteractGrab : MonoBehaviour
    
     private void CalculateVelocity()
     {
+        averageTorque = ((transform.localEulerAngles - lastFrameTorque)) / Time.deltaTime;
+
         averageVeloctiy = ((transform.position - lastFrameVelocity)) / Time.deltaTime;
         lastFrameVelocity = transform.position;
+
+        lastFrameTorque = transform.localEulerAngles;
     }
 
 }
