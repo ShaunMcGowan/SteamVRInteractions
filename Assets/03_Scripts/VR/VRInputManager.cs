@@ -5,6 +5,14 @@ using Valve.VR;
 /// <summary>
 /// Handles all the input 
 /// </summary>
+/// 
+public enum ButtonTypes
+{
+    Grip,
+    AButton,
+    BButton,
+    Trigger
+}
 public class VRInputManager : MonoBehaviour
 {
 
@@ -20,6 +28,15 @@ public class VRInputManager : MonoBehaviour
     }
 
     public bool GetRightTriggerDown()
+    {
+        return SteamVR_Actions._default.RightTrigger.GetStateDown(SteamVR_Input_Sources.Any);
+    }
+    public bool GetLeftTrigger()
+    {
+        return SteamVR_Actions._default.LeftTrigger.GetStateDown(SteamVR_Input_Sources.Any);
+    }
+
+    public bool GetRightTrigger()
     {
         return SteamVR_Actions._default.RightTrigger.GetStateDown(SteamVR_Input_Sources.Any);
     }
@@ -39,6 +56,19 @@ public class VRInputManager : MonoBehaviour
     {
         return SteamVR_Actions._default.GripRight.GetState(SteamVR_Input_Sources.Any);
     }
+
+
+
+    public bool GetLeftGripDown()
+    {
+        return SteamVR_Actions._default.GripLeft.GetStateDown(SteamVR_Input_Sources.Any);
+    }
+
+    public bool GetRightGripDown()
+    {
+        return SteamVR_Actions._default.GripRight.GetStateDown(SteamVR_Input_Sources.Any);
+    }
+
 
 
 
